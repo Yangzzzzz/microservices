@@ -170,12 +170,17 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>microservices</groupId>
+            <artifactId>micro-cms</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
 
     </dependencies>
 
     <build>
-        <finalName>spider-core</finalName>
+        <finalName>micro</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

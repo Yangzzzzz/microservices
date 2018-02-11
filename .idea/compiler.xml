@@ -7,13 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="micro-cms" />
+        <module name="micro-spider" />
         <module name="micro-web" />
+        <module name="microspider" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
       <module name="micro-cms" target="1.8" />
+      <module name="micro-spider" target="1.5" />
       <module name="micro-web" target="1.7" />
       <module name="microservices" target="1.5" />
+      <module name="microspider" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

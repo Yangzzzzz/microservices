@@ -11,6 +11,8 @@
   <modules>
     <module>micro-web</module>
     <module>micro-cms</module>
+    <module>micro-spider</module>
+    <module>micro-spider</module>
   </modules>
 
 </project>
