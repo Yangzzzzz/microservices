@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="micro-web:war">
+    <output-path>$PROJECT_DIR$/micro-web/target</output-path>
+    <root id="archive" name="spider-core.war">
+      <element id="artifact" artifact-name="micro-web:war exploded" />
+    </root>
+  </artifact>
+</component>
