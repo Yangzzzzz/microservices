@@ -1,6 +1,7 @@
 package com.microservices.web.service;
 
-import com.yangz.web.pojo.UserTest;
+
+import com.microservices.web.pojo.UserTest;
 
 public interface UserTestService {
 

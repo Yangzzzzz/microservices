@@ -8,7 +8,7 @@ import static org.apache.ibatis.jdbc.SqlBuilder.UPDATE;
 import static org.apache.ibatis.jdbc.SqlBuilder.VALUES;
 import static org.apache.ibatis.jdbc.SqlBuilder.WHERE;
 
-import com.yangz.web.pojo.UserTest;
+import com.microservices.web.pojo.UserTest;
 
 public class UserTestSqlProvider {
 

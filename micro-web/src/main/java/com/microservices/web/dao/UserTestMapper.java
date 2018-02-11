@@ -1,6 +1,6 @@
 package com.microservices.web.dao;
 
-import com.yangz.web.pojo.UserTest;
+import com.microservices.web.pojo.UserTest;
 import java.util.Date;
 import org.apache.ibatis.annotations.Arg;
 import org.apache.ibatis.annotations.ConstructorArgs;
