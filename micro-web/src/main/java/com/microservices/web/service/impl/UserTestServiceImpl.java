@@ -23,4 +23,5 @@ public class UserTestServiceImpl implements UserTestService {
         UserTest userTest = new UserTest(userId,"1122","yzz",new Date());
         userTestMapper.insert(userTest);
     }
+
 }
