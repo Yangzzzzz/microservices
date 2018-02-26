@@ -3,14 +3,13 @@ package com.microservices.web.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
     @RequestMapping("/login")
-    public String showUser(HttpServletRequest servletRequest, @RequestParam() Model model){
+    public String login(HttpServletRequest servletRequest,Model model){
 
-        return "html/login.html";
+        return "endLess/index.jsp";
     }
 }
