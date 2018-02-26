@@ -118,8 +118,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.6.1</version>
         <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
       <plugin>
@@ -128,17 +128,6 @@
         <version>3.0.2</version>
         <configuration>
           <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-
-      <!-- Allows the example to be run via 'mvn compile exec:java' -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.6.0</version>
-        <configuration>
-          <mainClass>microservices.MainApp</mainClass>
-          <includePluginDependencies>false</includePluginDependencies>
         </configuration>
       </plugin>
 
