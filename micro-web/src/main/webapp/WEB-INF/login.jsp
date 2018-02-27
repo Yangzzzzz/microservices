@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false" %>
 <html>
   <head>
     <meta charset="utf-8">
@@ -39,7 +40,7 @@
 					</div>
 				</div>
 				<div class="panel-body">
-					<form class="form-login" method="post" id="login_form" action="login">
+					<form class="form-login" method="post" id="login_form" action="login" f>
 						<div class="form-group">
 							<label>用户名</label>
 							<input type="text" placeholder="Username" name = "name" class="form-control input-sm bounceIn animation-delay2" >
@@ -55,7 +56,7 @@
 							</label>
 							记住我
 						</div>
-		
+                        ${resultMsg!=null?'<font color = "red" >账号或密码错误，请重新登录！</font>':''}
 						<div class="seperator"></div>
 					<%--	<div class="form-group">
 							Forgot your password?<br/>
