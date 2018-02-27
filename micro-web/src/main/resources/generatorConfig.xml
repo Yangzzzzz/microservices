@@ -37,6 +37,7 @@
             <!-- 是否对model添加 构造函数 -->
             <property name="constructorBased" value="true"/>
 
+
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
             <property name="enableSubPackages" value="false"/>
 

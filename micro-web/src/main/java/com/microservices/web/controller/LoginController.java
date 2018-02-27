@@ -18,9 +18,15 @@ public class LoginController {
 
     @RequestMapping(value="/login",method = RequestMethod.POST)
     public ModelAndView login(String name,String password){
-        UserInfo userInfo = userInfoService.selectByPrimaryKey(1);
+        UserInfo userInfo = userInfoService.selectUserInfo(name,password);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("endLess/index.jsp");
+        if(userInfo == null){
+            modelAndView.setViewName("/login.jsp");
+            return modelAndView;
+        }
+
+        modelAndView.setViewName("contents/endLess/index.jsp");
+
         return modelAndView;
     }
 }
