@@ -1,14 +1,8 @@
 package com.microservices.web.dao;
 
-import static org.apache.ibatis.jdbc.SqlBuilder.BEGIN;
-import static org.apache.ibatis.jdbc.SqlBuilder.INSERT_INTO;
-import static org.apache.ibatis.jdbc.SqlBuilder.SET;
-import static org.apache.ibatis.jdbc.SqlBuilder.SQL;
-import static org.apache.ibatis.jdbc.SqlBuilder.UPDATE;
-import static org.apache.ibatis.jdbc.SqlBuilder.VALUES;
-import static org.apache.ibatis.jdbc.SqlBuilder.WHERE;
-
 import com.microservices.web.pojo.UserInfo;
+
+import static org.apache.ibatis.jdbc.SqlBuilder.*;
 
 public class UserInfoSqlProvider {
 
@@ -65,6 +59,19 @@ public class UserInfoSqlProvider {
         
         WHERE("id = #{id,jdbcType=INTEGER}");
         
+        return SQL();
+    }
+
+    public String selectUserInfo(String name,String password){
+
+        BEGIN();
+        SELECT("user_info");
+        if(name != null){
+            VALUES("name","#{name,jdbcType=VARCHAR}");
+        }
+        if(password != null){
+            VALUES("password","#{password,jdbcType=VARCHAR}");
+        }
         return SQL();
     }
 }
