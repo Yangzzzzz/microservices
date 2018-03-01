@@ -34,7 +34,7 @@
   <!--权限校验-->
   <!--<filter>-->
     <!--<filter-name>PermissionCheckFilter</filter-name>-->
-    <!--<filter-class>com.microservices.web.filter.PermissionCheckFilterFilter</filter-class>-->
+    <!--<filter-class>PermissionCheckFilterFilter</filter-class>-->
   <!--</filter>-->
   <!--<filter-mapping>-->
     <!--<filter-name>PermissionCheckFilter</filter-name>-->

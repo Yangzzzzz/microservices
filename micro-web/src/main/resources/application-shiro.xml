@@ -15,7 +15,7 @@
     </bean>
 
      <!--凭证匹配器 -->
-    <bean id="userLoginCredentialsMatch" class="com.microservices.web.security.matcher.UserLoginCredentialsMatch">
+    <bean id="userLoginCredentialsMatch" class="com.micro.web.security.matcher.UserLoginCredentialsMatch">
         <constructor-arg ref="cacheManager" />
         <property name="hashAlgorithmName" value="md5" />
         <property name="hashIterations" value="2" />
@@ -23,7 +23,7 @@
     </bean>
 
     <!-- Realm实现 -->
-    <bean id="userRealm" class="com.microservices.web.security.realm.UserInfoRealm">
+    <bean id="userRealm" class="com.micro.web.security.realm.UserInfoRealm">
         <property name="credentialsMatcher" ref="userLoginCredentialsMatch" />
     </bean>
 

@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util.xsd
 ">
-   <context:component-scan base-package="com.microservices.web"></context:component-scan>
+   <context:component-scan base-package="com.micro.web"></context:component-scan>
    <util:properties id="systemconfig" location="properties/commonconfig.properties"></util:properties>
 
 </beans>

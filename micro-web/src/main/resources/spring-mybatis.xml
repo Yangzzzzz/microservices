@@ -15,7 +15,7 @@
         http://www.springframework.org/schema/util/spring-util.xsd
 ">
 
-    <context:component-scan base-package="com.microservices.web"></context:component-scan>
+    <context:component-scan base-package="com.micro.web"></context:component-scan>
     <bean id="propertiesConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
@@ -50,6 +50,6 @@
         <property name="dataSource" ref="dataSource" />
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.microservices.web.dao" />
+        <property name="basePackage" value="com.micro.web.dao" />
     </bean>
 </beans>

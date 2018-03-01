@@ -40,7 +40,7 @@
 					</div>
 				</div>
 				<div class="panel-body">
-					<form class="form-login" method="post" id="login_form" action="login" f>
+					<form class="form-login" method="post" id="login_form" action="<c:url value='/login'/>" f>
 						<div class="form-group">
 							<label>用户名</label>
 							<input type="text" placeholder="Username" name = "name" class="form-control input-sm bounceIn animation-delay2" >
