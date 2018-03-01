@@ -1,5 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html >
   <head>
     <meta charset="utf-8">
     <title>Registration</title>
@@ -8,13 +10,13 @@
     <meta name="author" content="">
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<c:url value = '/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet">
 
 	<!-- Font Awesome -->
-	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="<c:url value='/css/font-awesome.min.css'/>" rel="stylesheet">
 	
 	<!-- Endless -->
-	<link href="css/endless.min.css" rel="stylesheet">
+	<link href="<c:url value = '/css/endless.min.css'/>" rel="stylesheet">
 	
   </head>
 
@@ -22,7 +24,7 @@
 	<div class="login-wrapper">
 		<div class="text-center">
 			<h2 class="fadeInUp animation-delay10" style="font-weight:bold">
-				<span class="text-success">Endless</span> <span style="color:#ccc; text-shadow:0 1px #fff">Admin</span>
+				<span class="text-success">Zgnay</span> <span style="color:#ccc; text-shadow:0 1px #fff">Admin</span>
 			</h2>
 	    </div>
 		<div class="login-widget animation-delay1">	
@@ -59,14 +61,14 @@
 						<div class="seperator"></div>
 						<div class="form-group">
 							<div class="controls">
-								Already have an account? <a href="login.html" class="primary-font login-link">Sign In</a>
+								Already have an account? <a href="<c:url value = '/login'/>" class="primary-font login-link">Sign In</a>
 							</div>
 						</div><!-- /form-group -->
 							
 						<hr/>
 						<div class="form-group">
 							<div class="controls text-right">
-								<a class="btn btn-success btn-sm bounceIn animation-delay7 login-link" href="login.html"><i class="fa fa-plus-circle"></i> Sign up</a>
+								<a class="btn btn-success btn-sm bounceIn animation-delay7 login-link" href="<c:url value = '/login'/>"><i class="fa fa-plus-circle"></i> 注册</a>
 							</div>
 						</div><!-- /form-group -->
 					</form>
@@ -80,27 +82,27 @@
     <!-- Placed at the end of the document so the pages load faster -->
     
     <!-- Jquery -->
-	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="<c:url value='/js/jquery-1.10.2.min.js'/>"></script>
     
     <!--Bootstrap-->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="<c:url value = '/bootstrap/js/bootstrap.min.js'/>"></script>
    
 	<!-- Modernizr -->
-	<script src='js/modernizr.min.js'></script>
+	<script src="<c:url value = '/js/modernizr.min.js'/>"></script>
 	
 	<!-- Pace -->
-	<script src='js/pace.min.js'></script>
+	<script src="<c:url value = '/js/pace.min.js'/>"></script>
 	
 	<!-- Popup Overlay -->
-	<script src='js/jquery.popupoverlay.min.js'></script>
+	<script src="<c:url value = '/js/jquery.popupoverlay.min.js'/>"></script>
 	
 	<!-- Slimscroll -->
-	<script src='js/jquery.slimscroll.min.js'></script>
+	<script src="<c:url value = '/js/jquery.slimscroll.min.js'/>"></script>
 	
 	<!--Cookie-->
-	<script src='js/jquery.cookie.min.js'></script>
+	<script src="<c:url value = '/js/jquery.cookie.min.js'/>"></script>
 
 	<!--Endless-->
-	<script src="js/endless/endless.js"></script>
+	<script src="<c:url value = '/js/endless/endless.js'/>"></script>
   </body>
 </html>

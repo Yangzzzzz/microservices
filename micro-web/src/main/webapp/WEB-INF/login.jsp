@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>登录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -24,19 +24,19 @@
 	<div class="login-wrapper">
 		<div class="text-center">
 			<h2 class="fadeInUp animation-delay8" style="font-weight:bold">
-				<span class="text-success">My</span> <span style="color:#ccc; text-shadow:0 1px #fff">Son</span>
+				<span class="text-success">Zgnay</span> <span style="color:#ccc; text-shadow:0 1px #fff">System</span>
 			</h2>
 		</div>
 		<div class="login-widget animation-delay1">	
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
 					<div class="pull-left">
-						<i class="fa fa-lock fa-lg"></i> Login
+						<i class="fa fa-lock fa-lg"></i> 登录
 					</div>
 
 					<div class="pull-right">
-						<span style="font-size:11px;">Don't have any account?</span>
-						<a class="btn btn-default btn-xs login-link" href="register.html" style="margin-top:-2px;"><i class="fa fa-plus-circle"></i> Sign up</a>
+						<span style="font-size:11px;">没有账号?</span>
+						<a class="btn btn-default btn-xs login-link" href="<c:url value="/register/view" />" style="margin-top:-2px;"><i class="fa fa-plus-circle"></i> 注册</a>
 					</div>
 				</div>
 				<div class="panel-body">

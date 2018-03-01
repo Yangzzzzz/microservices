@@ -23,8 +23,6 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
 
     Logger logger = Logger.getLogger(LoginController.class);
-    @Autowired
-    private UserInfoService userInfoService;
 
     @RequestMapping(value="/login")
     public ModelAndView login(@RequestParam(value="name",required = false) String name, @RequestParam(value="password",required = false) String password, HttpSession httpSession, HttpServletRequest request){
@@ -33,10 +31,16 @@ public class LoginController {
         String errMsg = null;
         modelAndView.setViewName("/login.jsp");
 
+        Subject subject = SecurityUtils.getSubject();
+        if(subject.isAuthenticated()){
+            modelAndView.setViewName("contents/endLess/index.jsp");
+            return modelAndView;
+        }
+
         if(StringUtils.isEmpty(name) || StringUtils.isEmpty(password)){
             return modelAndView;
         }
-        Subject subject = SecurityUtils.getSubject();
+
         UsernamePasswordToken token = new UsernamePasswordToken(name,password);
         try{
             subject.login(token);
@@ -52,26 +56,7 @@ public class LoginController {
         }
 
 
-
-
-//        if(httpSession.getAttribute("userName")!=null){
-//            modelAndView.setViewName("contents/endLess/index.jsp");
-//            return modelAndView;
-//        }
-//        if(!request.getMethod().equals("POST")){
-//
-//            return modelAndView;
-//        }
-//        UserInfo userInfo = userInfoService.selectUserInfo(name,password);
-//
-//        if(userInfo == null){
-//
-//            modelAndView.addObject("resultMsg","账号或密码错误，请重新输入！");
-//            return modelAndView;
-//        }
-//
         modelAndView.setViewName("contents/endLess/index.jsp");
-//        httpSession.setAttribute("userName",name);
         return modelAndView;
     }
 }
