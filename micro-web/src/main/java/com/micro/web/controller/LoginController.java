@@ -24,6 +24,14 @@ public class LoginController {
 
     Logger logger = Logger.getLogger(LoginController.class);
 
+    /**
+     * 登录
+     * @param name
+     * @param password
+     * @param httpSession
+     * @param request
+     * @return
+     */
     @RequestMapping(value="/login")
     public ModelAndView login(@RequestParam(value="name",required = false) String name, @RequestParam(value="password",required = false) String password, HttpSession httpSession, HttpServletRequest request){
 
@@ -58,5 +66,16 @@ public class LoginController {
 
         modelAndView.setViewName("contents/endLess/index.jsp");
         return modelAndView;
+    }
+
+    /**
+     * 登出
+     * @return
+     */
+    @RequestMapping("/logout")
+    public String logout(){
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
+        return "/login.jsp";
     }
 }
