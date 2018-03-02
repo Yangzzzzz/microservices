@@ -10,29 +10,41 @@
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
+
 	<!-- Font Awesome -->
 	<link href="css/font-awesome.min.css" rel="stylesheet">
-	
+
 	<!-- Pace -->
 	<link href="css/pace.css" rel="stylesheet">
-	
+
 	<!-- Color box -->
 	<link href="css/colorbox/colorbox.css" rel="stylesheet">
-	
+
 	<!-- Morris -->
-	<link href="css/morris.css" rel="stylesheet"/>	
-	
+	<link href="css/morris.css" rel="stylesheet"/>
+
 	<!-- Endless -->
 	<link href="css/endless.min.css" rel="stylesheet">
 	<link href="css/endless-skin.css" rel="stylesheet">
-	
+	<script type="text/javascript">
+		function onClickMenu(ele){
+
+			var href = $(ele).attr("href");
+			$.ajax({
+				url:"<c:url value ='/gallery'/>",
+				success:function(date){
+				    $("#main-container").html(date);
+				}
+			});
+	}
+
+		</script>
   </head>
 
   <body class="overflow-hidden">
 	<!-- Overlay Div -->
 	<div id="overlay" class="transparent"></div>
-	
+
 	<a href="" id="theme-setting-icon"><i class="fa fa-cog fa-lg"></i></a>
 	<div id="theme-setting">
 		<div class="title">
@@ -64,7 +76,7 @@
 			<a href="#" class="brand">
 				<span>Zgnay</span>
 				<span class="text-toggle"> Admin</span>
-			</a><!-- /brand -->					
+			</a><!-- /brand -->
 			<button type="button" class="navbar-toggle pull-left" id="sidebarToggle">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -82,7 +94,7 @@
 						<span class="notification-label bounceIn animation-delay4">7</span>
 					</a>
 					<ul class="dropdown-menu message dropdown-1">
-						<li><a>You have 4 new unread messages</a></li>					  
+						<li><a>You have 4 new unread messages</a></li>
 						<li>
 							<a class="clearfix" href="#">
 								<img src="img/user.jpg" alt="User Avatar">
@@ -93,7 +105,7 @@
 									</p>
 									<small class="text-muted"><i class="fa fa-check text-success"></i> 27m ago</small>
 								</div>
-							</a>	
+							</a>
 						</li>
 						<li>
 							<a class="clearfix" href="#">
@@ -105,7 +117,7 @@
 									</p>
 									<small class="text-muted"><i class="fa fa-check text-success"></i> 5hr ago</small>
 								</div>
-							</a>	
+							</a>
 						</li>
 						<li>
 							<a class="clearfix" href="#">
@@ -117,7 +129,7 @@
 									</p>
 									<small class="text-muted"><i class="fa fa-reply"></i> Yesterday</small>
 								</div>
-							</a>	
+							</a>
 						</li>
 						<li>
 							<a class="clearfix" href="#">
@@ -129,9 +141,9 @@
 									</p>
 									<small class="text-muted"><i class="fa fa-reply"></i> 9 Feb 2013</small>
 								</div>
-							</a>	
+							</a>
 						</li>
-						<li><a href="#">View all messages</a></li>					  
+						<li><a href="#">View all messages</a></li>
 					</ul>
 				</li>
 				<li class="dropdown hidden-xs">
@@ -140,7 +152,7 @@
 						<span class="notification-label bounceIn animation-delay5">4</span>
 					</a>
 					<ul class="dropdown-menu task dropdown-2">
-						<li><a href="#">You have 4 tasks to complete</a></li>					  
+						<li><a href="#">You have 4 tasks to complete</a></li>
 						<li>
 							<a href="#">
 								<div class="clearfix">
@@ -185,7 +197,7 @@
 								</div>
 							</a>
 						</li>
-						<li><a href="#">View all tasks</a></li>					  
+						<li><a href="#">View all tasks</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -194,7 +206,7 @@
 						<span class="notification-label bounceIn animation-delay6">5</span>
 					</a>
 					<ul class="dropdown-menu notification dropdown-3">
-						<li><a href="#">You have 5 new notifications</a></li>					  
+						<li><a href="#">You have 5 new notifications</a></li>
 						<li>
 							<a href="#">
 								<span class="notification-icon bg-warning">
@@ -240,7 +252,7 @@
 								<span class="time text-muted">1hr ago</span>
 							</a>
 						</li>
-						<li><a href="#">View all notifications</a></li>					  
+						<li><a href="#">View all notifications</a></li>
 					</ul>
 				</li>
 				<li class="profile dropdown">
@@ -254,7 +266,7 @@
 								<img src="img/user.jpg" alt="User Avatar">
 								<div class="detail">
 									<strong>John Doe</strong>
-									<p class="grey">John_Doe@email.com</p> 
+									<p class="grey">John_Doe@email.com</p>
 								</div>
 							</a>
 						</li>
@@ -267,7 +279,7 @@
 				</li>
 			</ul>
 		</div><!-- /top-nav-->
-		
+
 		<aside class="fixed skin-6">
 			<div class="sidebar-inner scrollable-sidebar">
 				<div class="size-toggle">
@@ -279,7 +291,7 @@
 					<a class="btn btn-sm pull-right logoutConfirm_open"  href="#logoutConfirm">
 						<i class="fa fa-power-off"></i>
 					</a>
-				</div><!-- /size-toggle -->	
+				</div><!-- /size-toggle -->
 				<div class="user-block clearfix">
 					<img src="img/user.jpg" alt="User Avatar">
 					<div class="detail">
@@ -301,9 +313,9 @@
 				<div class="main-menu">
 					<ul>
 						<li class="active">
-							<a href="index.html">
+							<a href="#" onclick="onClickMenu(this)">
 								<span class="menu-icon">
-									<i class="fa fa-desktop fa-lg"></i> 
+									<i class="fa fa-desktop fa-lg"></i>
 								</span>
 								<span class="text">
 									Dashboard
@@ -314,7 +326,7 @@
 						<li class="openable open">
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-file-text fa-lg"></i> 
+									<i class="fa fa-file-text fa-lg"></i>
 								</span>
 								<span class="text">
 									Page
@@ -344,7 +356,7 @@
 						<li class="openable">
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-tag fa-lg"></i> 
+									<i class="fa fa-tag fa-lg"></i>
 								</span>
 								<span class="text">
 									Component
@@ -364,11 +376,11 @@
 								<li><a href="form_wizard.html"><span class="submenu-label">Form Wizard</span></a></li>
 							</ul>
 						</li>
-						
+
 						<li>
 							<a href="timeline.html">
 								<span class="menu-icon">
-									<i class="fa fa-clock-o fa-lg"></i> 
+									<i class="fa fa-clock-o fa-lg"></i>
 								</span>
 								<span class="text">
 									Timeline
@@ -379,7 +391,7 @@
 						<li>
 							<a href="gallery.html">
 								<span class="menu-icon">
-									<i class="fa fa-picture-o fa-lg"></i> 
+									<i class="fa fa-picture-o fa-lg"></i>
 								</span>
 								<span class="text">
 									Gallery
@@ -390,7 +402,7 @@
 						<li>
 							<a href="inbox.html">
 								<span class="menu-icon">
-									<i class="fa fa-envelope fa-lg"></i> 
+									<i class="fa fa-envelope fa-lg"></i>
 								</span>
 								<span class="text">
 									Inbox
@@ -402,7 +414,7 @@
 						<li>
 							<a href="email_selection.html">
 								<span class="menu-icon">
-									<i class="fa fa-tasks fa-lg"></i> 
+									<i class="fa fa-tasks fa-lg"></i>
 								</span>
 								<span class="text">
 									Email Template
@@ -414,7 +426,7 @@
 						<li class="openable">
 							<a href="#">
 								<span class="menu-icon">
-									<i class="fa fa-magic fa-lg"></i> 
+									<i class="fa fa-magic fa-lg"></i>
 								</span>
 								<span class="text">
 									Multi-Level menu
@@ -465,9 +477,9 @@
 							</ul>
 						</li>
 					</ul>
-					
+
 					<div class="alert alert-info">
-						Welcome to Endless Admin. Do not forget to check all my pages. 
+						Welcome to Endless Admin. Do not forget to check all my pages.
 					</div>
 				</div><!-- /main-menu -->
 			</div><!-- /sidebar-inner -->
