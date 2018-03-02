@@ -41,7 +41,7 @@ public class LoginController {
 
         Subject subject = SecurityUtils.getSubject();
         if(subject.isAuthenticated()){
-            modelAndView.setViewName("contents/endLess/index.jsp");
+            modelAndView.setViewName("redirect:/index");
             return modelAndView;
         }
 
@@ -64,7 +64,7 @@ public class LoginController {
         }
 
 
-        modelAndView.setViewName("contents/endLess/index.jsp");
+        modelAndView.setViewName("redirect:/index");
         return modelAndView;
     }
 
