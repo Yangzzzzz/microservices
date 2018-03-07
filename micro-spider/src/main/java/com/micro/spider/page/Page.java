@@ -1,7 +1,8 @@
 package com.micro.spider.page;
 
-import org.apache.http.util.EntityUtils;
 
+
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class Page {
     //编码
     private String charSet = "ISO-8859-1";
     //返回状态码
-    private String responseCode;
+    private int responseCode;
     //返回字节
     private byte[] responseContent;
     //目标url 下一个爬取对象
@@ -35,7 +36,14 @@ public class Page {
 
 
     public String toString(){
-        return "";
+
+        String str = null;
+        try {
+            str = new String(responseContent,charSet);
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return str;
     }
 
 
@@ -65,11 +73,11 @@ public class Page {
         this.charSet = charSet;
     }
 
-    public String getResponseCode() {
+    public int getResponseCode() {
         return responseCode;
     }
 
-    public void setResponseCode(String responseCode) {
+    public void setResponseCode(int responseCode) {
         this.responseCode = responseCode;
     }
 

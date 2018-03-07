@@ -6,14 +6,13 @@ import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.ByteArrayBuffer;
 import org.apache.http.util.EntityUtils;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.Map;
 
 abstract class AbstrctPerformer implements Performer{
@@ -39,17 +38,18 @@ abstract class AbstrctPerformer implements Performer{
             System.out.println("executing request " + httpget.getURI());
             // 执行get请求.
             CloseableHttpResponse response = httpclient.execute(httpget);
+            page.setResponseCode(response.getStatusLine().getStatusCode());
+
             try {
                 // 获取响应实体
                 HttpEntity entity = response.getEntity();
-
                 if (entity != null) {
                     page.setResponseContent(EntityUtils.toByteArray(entity));
                     page.setHeads(headers);
-
                     entity.getContentType().getValue();
+                    Charset charset = ContentType.get(entity).getCharset();
+                    page.setCharSet(charset.name());
 
-                    rspStr = EntityUtils.toString(entity);
                 }
             } finally {
                 response.close();
