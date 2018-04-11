@@ -17,7 +17,7 @@ public class Page {
     //cookies
     private Map<String,String> cookies;
     //编码
-    private String charSet = "ISO-8859-1";
+    private String charSet = "utf-8";
     //返回状态码
     private int responseCode;
     //返回字节
