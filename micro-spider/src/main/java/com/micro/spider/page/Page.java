@@ -10,7 +10,6 @@ import java.util.Map;
  * 页面实体类
  */
 public class Page {
-    //链接 private String url;
 
     //请求头
     private Map<String,String> heads;
@@ -28,7 +27,6 @@ public class Page {
 
 
     public List<String> xpath(String regex){
-
 
 
         return null;

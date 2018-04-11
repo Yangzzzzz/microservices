@@ -1,19 +1,22 @@
 package com.micro.spider;
 
+import com.micro.spider.factory.PerformerFactory;
 import com.micro.spider.page.Page;
 import com.micro.spider.performer.Performer;
-import com.micro.spider.performer.SimplePerformer;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class Spider {
 
     private LinkedList<Page> pages ;
     private LinkedList<String> requests;
-    private HashMap<String,String> header;
+    private HashMap<String,String> header = new HashMap<String, String>();
     private HashMap<String,String> cookie;
-    private Performer performer = new SimplePerformer();
+    private Performer performer = PerformerFactory.getInstance();
 
 
     /**
@@ -35,8 +38,14 @@ public class Spider {
      * @param name
      * @param val
      */
-    public void addHead(String name,String val){
+    public Spider addHead(String name,String val){
         header.put(name,val);
+        return this;
+    }
+
+    public Spider addHead(Map<String,String> header){
+        this.header.putAll(header);
+        return this;
     }
 
 
@@ -50,7 +59,7 @@ public class Spider {
     public void start(){
         for(String request : requests){
             Page page = performer.execute(request,header);
-            System.out.print(page);
+            System.out.println(page);
         }
     }
 

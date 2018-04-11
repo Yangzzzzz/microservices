@@ -17,7 +17,6 @@ import java.util.Map;
 
 public class SimplePerformer extends AbstrctPerformer{
 
-    private Page page ;
 
 
     @Override
@@ -30,7 +29,6 @@ public class SimplePerformer extends AbstrctPerformer{
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
         Page page = new Page();
-        String rspStr = "";
 
         try {
 
