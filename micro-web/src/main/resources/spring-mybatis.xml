@@ -17,7 +17,7 @@
 
     <context:component-scan base-package="com.micro.web"></context:component-scan>
     <bean id="propertiesConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="classpath:jdbc.properties"/>
+        <property name="location" value="classpath:properties/jdbc.properties"/>
     </bean>
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 
