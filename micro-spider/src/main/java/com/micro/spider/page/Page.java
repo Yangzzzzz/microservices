@@ -10,14 +10,13 @@ import java.util.Map;
  * 页面实体类
  */
 public class Page {
-    //链接 private String url;
 
     //请求头
     private Map<String,String> heads;
     //cookies
     private Map<String,String> cookies;
     //编码
-    private String charSet = "ISO-8859-1";
+    private String charSet = "utf-8";
     //返回状态码
     private int responseCode;
     //返回字节
@@ -28,7 +27,6 @@ public class Page {
 
 
     public List<String> xpath(String regex){
-
 
 
         return null;

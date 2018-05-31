@@ -27,11 +27,12 @@
 	<link href="css/endless.min.css" rel="stylesheet">
 	<link href="css/endless-skin.css" rel="stylesheet">
 	<script type="text/javascript">
-		function onClickMenu(ele){
+		function onClickMenu(val){
 
-			var href = $(ele).attr("href");
+			var url = "<c:url value ='/'/>" + val;
+            debugger;
 			$.ajax({
-				url:"<c:url value ='/gallery'/>",
+				url:url,
 				success:function(date){
 				    $("#main-container").html(date);
 				}
@@ -389,7 +390,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="gallery.html">
+							<a href="" onclick="onClickMenu('/gallery')" >
 								<span class="menu-icon">
 									<i class="fa fa-picture-o fa-lg"></i>
 								</span>

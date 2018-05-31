@@ -2,8 +2,10 @@ package com.micro.spider.performer;
 
 import com.micro.spider.page.Page;
 
+import java.util.Map;
+
 public interface Performer {
 
-    public Page execute();
+    Page execute(String url,Map<String,String> headers);
 
 }
