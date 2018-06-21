@@ -85,7 +85,7 @@
 
 
 
-        <table schema="" tableName="user_info" enableCountByExample="false" enableSelectByExample="false"
+        <table schema="" tableName="grid_datebase_nb_corporateservice_info" enableCountByExample="false" enableSelectByExample="false"
                enableDeleteByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false" >
 
         </table>
